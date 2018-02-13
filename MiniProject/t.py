@@ -174,7 +174,7 @@ def draw_tree(G_in, G_in_bin):
 
 #print(minTVF(G_bin, root, 100))
 
-for i in [80]:
+for i in [20]:
 	for j in [100]:
 		d=j
 		G = nx.random_tree(i)
@@ -221,8 +221,8 @@ for i in [80]:
 		answer_tvf = minTVF(G_bin, root, d)
 		print('dblp_ravi', i, j, len(answer_tvf))
 
-		# thread_draw = threading.Thread(target=draw_tree, args=(G, G_bin))
-		# thread_draw.start()
+		thread_draw = threading.Thread(target=draw_tree, args=(G, G_bin))
+		thread_draw.start()
 		max_possible_depth = G_bin.nodes[root]['max_depth']
 		for it in [2000]:
 			if d<max_possible_depth:
